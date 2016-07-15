@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EED61D392AB4000DDED7 /* AppDelegate.swift */; };
-		76D5EED91D392AB4000DDED7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EED81D392AB4000DDED7 /* ViewController.swift */; };
 		76D5EEDE1D392AB4000DDED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */; };
 		76D5EEE11D392AB4000DDED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D5EEDF1D392AB4000DDED7 /* LaunchScreen.storyboard */; };
+		76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */; };
 		89100205700ADE9E38355514 /* Pods_iStudySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7BAD93F958B2D79307DCB5 /* Pods_iStudySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -18,10 +18,10 @@
 		68EDA3D5A173D0971DB4248B /* Pods-iStudySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStudySwift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift.release.xcconfig"; sourceTree = "<group>"; };
 		76D5EED31D392AB4000DDED7 /* iStudySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStudySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D5EED61D392AB4000DDED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76D5EED81D392AB4000DDED7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76D5EEE01D392AB4000DDED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76D5EEE21D392AB4000DDED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9E7A23B474140AF1A0B10FAD /* Pods-iStudySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStudySwift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		CC7BAD93F958B2D79307DCB5 /* Pods_iStudySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iStudySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,13 +68,45 @@
 		76D5EED51D392AB4000DDED7 /* iStudySwift */ = {
 			isa = PBXGroup;
 			children = (
+				76D5EEE81D392FB9000DDED7 /* Classes */,
 				76D5EED61D392AB4000DDED7 /* AppDelegate.swift */,
-				76D5EED81D392AB4000DDED7 /* ViewController.swift */,
 				76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */,
 				76D5EEDF1D392AB4000DDED7 /* LaunchScreen.storyboard */,
 				76D5EEE21D392AB4000DDED7 /* Info.plist */,
 			);
 			path = iStudySwift;
+			sourceTree = "<group>";
+		};
+		76D5EEE81D392FB9000DDED7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */,
+				76D5EEE91D392FB9000DDED7 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		76D5EEE91D392FB9000DDED7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				76D5EEEA1D392FB9000DDED7 /* WeiBo */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		76D5EEEA1D392FB9000DDED7 /* WeiBo */ = {
+			isa = PBXGroup;
+			children = (
+				76D5EEEB1D392FB9000DDED7 /* Main */,
+			);
+			path = WeiBo;
+			sourceTree = "<group>";
+		};
+		76D5EEEB1D392FB9000DDED7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		BF35AFACF31650A58739E988 /* Frameworks */ = {
@@ -206,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D5EED91D392AB4000DDED7 /* ViewController.swift in Sources */,
+				76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */,
 				76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
