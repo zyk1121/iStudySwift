@@ -21,8 +21,7 @@ class WBBaseTableViewController: UITableViewController {
     // MARK: - 内部控制方法
     private func setupVisitorView()
     {
-        let otherView = UIView()
-        otherView.backgroundColor = UIColor.redColor()
+        let otherView = WBVisitorView()
         view = otherView
     }
 }
