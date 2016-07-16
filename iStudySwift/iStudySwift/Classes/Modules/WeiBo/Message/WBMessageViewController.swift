@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMessageViewController: UITableViewController
+class WBMessageViewController: WBBaseTableViewController
 {
 
     override func viewDidLoad() {

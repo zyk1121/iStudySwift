@@ -11,6 +11,7 @@ import UIKit
 
 class WBMainViewController: UITabBarController {
 
+    //MARK:-lifecircle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +47,17 @@ class WBMainViewController: UITabBarController {
         }
         self.tabBar.tintColor = UIColor.orangeColor()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBar.addSubview(composeButton)
+        
+        let rect = composeButton.frame.size
+        let width = tabBar.bounds.width / CGFloat(childViewControllers.count)
+        
+        composeButton.frame = CGRectMake(2*width, 0, width, rect.height);
     }
     
     // 通过字符串创建类
@@ -95,6 +107,31 @@ class WBMainViewController: UITabBarController {
         self.addChildViewController(navigationVc)
     }
 
+    //MARK:-懒加载
+    lazy var composeButton: UIButton = {
+        ()->UIButton in
+        let btn:UIButton = UIButton(imageName: "tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+        /*
+        let btn:UIButton = UIButton()
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+ */
+        btn.addTarget(self, action: #selector(WBMainViewController.composeBtnClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return btn
+    }()
+    
+    //MARK: - click event
+    
+    @objc private func composeBtnClick(btn:UIButton) {
+        let publishVC: WBPublishViewController = WBPublishViewController()
+        self.presentViewController(publishVC, animated: true, completion: nil)
+    }
+//    func composeBtnClick(btn:UIButton) {
+//        SSLog("")
+//    }
     
     
     /*

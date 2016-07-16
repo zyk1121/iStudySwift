@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMeViewController: UITableViewController {
+class WBMeViewController: WBBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
