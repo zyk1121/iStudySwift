@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76A0B93A1D39E5F4005132A3 /* SSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0B9391D39E5F4005132A3 /* SSLog.swift */; };
+		76A0BACD1D39F92A005132A3 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BACC1D39F92A005132A3 /* WBDiscoverViewController.swift */; };
+		76A0BACF1D39F93D005132A3 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */; };
+		76A0BAD11D39F94D005132A3 /* WBMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD01D39F94D005132A3 /* WBMeViewController.swift */; };
+		76A0BAD31D39F960005132A3 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD21D39F960005132A3 /* WBMessageViewController.swift */; };
+		76A0BAD51D39F996005132A3 /* WBPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD41D39F996005132A3 /* WBPublishViewController.swift */; };
 		76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EED61D392AB4000DDED7 /* AppDelegate.swift */; };
 		76D5EEDE1D392AB4000DDED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */; };
 		76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */; };
@@ -17,6 +23,12 @@
 
 /* Begin PBXFileReference section */
 		68EDA3D5A173D0971DB4248B /* Pods-iStudySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStudySwift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift.release.xcconfig"; sourceTree = "<group>"; };
+		76A0B9391D39E5F4005132A3 /* SSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLog.swift; sourceTree = "<group>"; };
+		76A0BACC1D39F92A005132A3 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		76A0BAD01D39F94D005132A3 /* WBMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMeViewController.swift; sourceTree = "<group>"; };
+		76A0BAD21D39F960005132A3 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		76A0BAD41D39F996005132A3 /* WBPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPublishViewController.swift; sourceTree = "<group>"; };
 		76D5EED31D392AB4000DDED7 /* iStudySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStudySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D5EED61D392AB4000DDED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +59,62 @@
 				68EDA3D5A173D0971DB4248B /* Pods-iStudySwift.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		76A0B9371D39E5D1005132A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				76A0B9381D39E5D1005132A3 /* Log */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		76A0B9381D39E5D1005132A3 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				76A0B9391D39E5F4005132A3 /* SSLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		76A0BAC71D39F904005132A3 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				76A0BACC1D39F92A005132A3 /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		76A0BAC81D39F904005132A3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		76A0BAC91D39F904005132A3 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				76A0BAD01D39F94D005132A3 /* WBMeViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		76A0BACA1D39F904005132A3 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				76A0BAD21D39F960005132A3 /* WBMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		76A0BACB1D39F904005132A3 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				76A0BAD41D39F996005132A3 /* WBPublishViewController.swift */,
+			);
+			path = Publish;
 			sourceTree = "<group>";
 		};
 		76D5EECA1D392AB4000DDED7 = {
@@ -81,6 +149,7 @@
 		76D5EEE81D392FB9000DDED7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				76A0B9371D39E5D1005132A3 /* Utils */,
 				76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */,
 				76D5EEE91D392FB9000DDED7 /* Modules */,
 			);
@@ -99,6 +168,11 @@
 		76D5EEEA1D392FB9000DDED7 /* WeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				76A0BAC71D39F904005132A3 /* Discover */,
+				76A0BAC81D39F904005132A3 /* Home */,
+				76A0BAC91D39F904005132A3 /* Me */,
+				76A0BACA1D39F904005132A3 /* Message */,
+				76A0BACB1D39F904005132A3 /* Publish */,
 				76D5EEEB1D392FB9000DDED7 /* Main */,
 			);
 			path = WeiBo;
@@ -249,9 +323,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */,
+				76A0BAD51D39F996005132A3 /* WBPublishViewController.swift in Sources */,
 				76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */,
+				76A0BACD1D39F92A005132A3 /* WBDiscoverViewController.swift in Sources */,
 				76D5EEF11D39D778000DDED7 /* WBMainViewController.swift in Sources */,
 				76D5EEF41D39D7CE000DDED7 /* HTTPMainViewController.swift in Sources */,
+				76A0BAD11D39F94D005132A3 /* WBMeViewController.swift in Sources */,
+				76A0BACF1D39F93D005132A3 /* WBHomeViewController.swift in Sources */,
+				76A0B93A1D39E5F4005132A3 /* SSLog.swift in Sources */,
+				76A0BAD31D39F960005132A3 /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +429,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iStudySwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ishowmap.iStudySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

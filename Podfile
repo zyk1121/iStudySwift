@@ -8,4 +8,5 @@ target "iStudySwift" do
   pod 'SnapKit', '~> 0.15.0'
   pod 'Alamofire', '~> 3.2.1'
   pod 'SwiftHTTP', '~> 1.0.4'
+  pod 'QorumLogs', '~> 0.4'
 end

@@ -6,10 +6,28 @@
 //  Copyright © 2016年 zhangyuanke. All rights reserved.
 //
 
+/*
+ .gitignore
+ 
+ 
+ .DS_Store
+ build
+ *.mode1v3
+ *.pbxuser
+ project.xcworkspace
+ xcuserdata
+ .svn
+ DerivedData
+ *.orig
+ *.xccheckout
+ 
+ Pods/
+ */
 import UIKit
 import SnapKit
 import Alamofire
 import SwiftHTTP
+import QorumLogs
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -28,6 +46,28 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.setupData()
         self.setupUI()
+        
+//        self.testLog()
+        self.testLog2()
+    }
+    
+    func testLog2() {
+        SSLogEnabled = true
+        SSLog("abc")
+        SSLog(1)
+        SSLog(3.14)
+    }
+    
+    func testLog() {
+        QorumLogs.enabled = true
+        QorumLogs.minimumLogLevelShown = 2
+        QorumLogs.test()
+        QL1("1")
+        QL2("2")
+        QL3("3")
+        QL4("4")
+        QLPlusLine()
+        QLShortLine()
     }
     
     func setupData() {
