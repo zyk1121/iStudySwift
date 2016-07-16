@@ -53,9 +53,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func testLog2() {
         SSLogEnabled = true
-        SSLog("abc")
-        SSLog(1)
-        SSLog(3.14)
+//        SSLog("abc")
+//        SSLog(1)
+//        SSLog(3.14)
     }
     
     func testLog() {

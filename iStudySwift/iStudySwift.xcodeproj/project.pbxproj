@@ -13,6 +13,8 @@
 		76A0BAD11D39F94D005132A3 /* WBMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD01D39F94D005132A3 /* WBMeViewController.swift */; };
 		76A0BAD31D39F960005132A3 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD21D39F960005132A3 /* WBMessageViewController.swift */; };
 		76A0BAD51D39F996005132A3 /* WBPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD41D39F996005132A3 /* WBPublishViewController.swift */; };
+		76A0BAD81D3A3B44005132A3 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A0BAD71D3A3B44005132A3 /* MainVCSettings.json */; };
+		76A0BADA1D3A449A005132A3 /* WBNullTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAD91D3A449A005132A3 /* WBNullTableViewController.swift */; };
 		76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EED61D392AB4000DDED7 /* AppDelegate.swift */; };
 		76D5EEDE1D392AB4000DDED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */; };
 		76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */; };
@@ -29,6 +31,8 @@
 		76A0BAD01D39F94D005132A3 /* WBMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMeViewController.swift; sourceTree = "<group>"; };
 		76A0BAD21D39F960005132A3 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		76A0BAD41D39F996005132A3 /* WBPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBPublishViewController.swift; sourceTree = "<group>"; };
+		76A0BAD71D3A3B44005132A3 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		76A0BAD91D3A449A005132A3 /* WBNullTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNullTableViewController.swift; sourceTree = "<group>"; };
 		76D5EED31D392AB4000DDED7 /* iStudySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStudySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D5EED61D392AB4000DDED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 			path = Publish;
 			sourceTree = "<group>";
 		};
+		76A0BAD61D3A3B44005132A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76A0BAD71D3A3B44005132A3 /* MainVCSettings.json */,
+				76A0BAD91D3A449A005132A3 /* WBNullTableViewController.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		76D5EECA1D392AB4000DDED7 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +194,7 @@
 		76D5EEEB1D392FB9000DDED7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				76A0BAD61D3A3B44005132A3 /* Resources */,
 				76D5EEF01D39D778000DDED7 /* WBMainViewController.swift */,
 			);
 			path = Main;
@@ -263,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A0BAD81D3A3B44005132A3 /* MainVCSettings.json in Resources */,
 				76D5EEDE1D392AB4000DDED7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */,
+				76A0BADA1D3A449A005132A3 /* WBNullTableViewController.swift in Sources */,
 				76A0BAD51D39F996005132A3 /* WBPublishViewController.swift in Sources */,
 				76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */,
 				76A0BACD1D39F92A005132A3 /* WBDiscoverViewController.swift in Sources */,

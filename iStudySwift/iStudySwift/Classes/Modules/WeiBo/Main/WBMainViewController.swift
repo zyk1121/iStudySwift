@@ -13,6 +13,93 @@ class WBMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        guard let filePath = NSBundle.mainBundle().pathForResource("MainVCSettings", ofType: "json") else {
+            // json 不存在
+            return
+        }
+        
+        guard let data = NSData(contentsOfFile: filePath) else {
+            return;
+        }
+        
+        do {
+            let objc = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! [[String:AnyObject]]
+//            SSLog(objc)
+            for dict in objc {
+                let title = dict["title"] as? String
+                let vcName = dict["vcName"] as? String
+                let imageName = dict["imageName"] as? String
+                 self.addChildVc(vcName,title: title,image: imageName)
+            }
+        } catch {
+                    self.addChildVc("WBHomeViewController",title: "首页",image: "tabbar_home")
+                    self.addChildVc("WBMessageViewController",title: "消息",image: "tabbar_message_center")
+            self.addChildVc("WBNullTableViewController",title:"",image: "")
+            
+            
+                    self.addChildVc("WBDiscoverViewController",title: "发现",image: "tabbar_discover")
+                    self.addChildVc("WBMeViewController",title: "我",image: "tabbar_profile")
+        
+        }
+        self.tabBar.tintColor = UIColor.orangeColor()
+        
+    }
+    
+    // 通过字符串创建类
+    /**
+     *  添加一个子控制器
+     *
+     *  @param childVc       子控制器
+     *  @param title         标题
+     *  @param image         图片
+     *  @param selectedImage 选中的图片
+     */
+    func addChildVc(childVcName: String?, title: String?, image: String?) {
+        
+        
+        guard let nameSpace = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as? String else {
+            SSLog("获取命名空间失败")
+            return
+        }
+        
+        var cls: AnyClass? = nil
+        if let childName = childVcName {
+            cls = NSClassFromString(nameSpace+"."+childName)
+        }
+        
+        guard let clsType = cls as? UITableViewController.Type else {
+            SSLog("获取类型失败")
+            return
+        }
+        
+        // 设置子控制器的文字(可以设置tabBar和navigationBar的文字)
+        let childVc: UIViewController = clsType.init()
+        
+        childVc.title = title;
+        //    childVc.view.backgroundColor = [UIColor whiteColor];
+        
+        // 设置子控制器的tabBarItem图片
+        if let _image = image {
+            childVc.tabBarItem.image = UIImage(named: _image)
+            let selectedImage = _image + "_highlighted"
+            //    childVc.tabBarItem.selectedImage = UIImage(named: selectedImage)
+            // 禁用图片渲染,还可以去图片的属性，XCODE右边工具栏设置
+            childVc.tabBarItem.selectedImage = UIImage(named: selectedImage)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        }
+        // 添加子控制器
+        let navigationVc: UINavigationController = UINavigationController(rootViewController: childVc)
+        
+        self.addChildViewController(navigationVc)
+    }
+
+    
+    
+    /*
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.whiteColor()
         
@@ -62,4 +149,5 @@ class WBMainViewController: UITabBarController {
         
     self.addChildViewController(navigationVc)
     }
+ */
 }
