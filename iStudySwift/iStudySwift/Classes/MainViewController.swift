@@ -141,6 +141,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func selectRow(row : Int) {
         let vc : UIViewController = self.listViewControllers![row]
+        if row == 0 {
+            // weibo
+            self.navigationController?.presentViewController(vc, animated: true, completion: { 
+                
+            })
+            return
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

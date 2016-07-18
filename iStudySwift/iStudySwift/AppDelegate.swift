@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController : UINavigationController = UINavigationController(rootViewController:MainViewController())
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        
+        // 全局外观
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        
         return true
     }
 

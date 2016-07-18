@@ -25,13 +25,37 @@ class WBHomeViewController: WBBaseTableViewController {
     override func setupVisitorView() {
         let otherView = WBHomeVisitorView()
         view = otherView
+        
+        // 登录注册
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.registerBtnCliked(_:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.loginBtnCliked(_:)))
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.loginBtnCliked(_:))),UIBarButtonItem(title: "退出", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.quitBtnCliked(_:))),]
+       
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+       
     }
 
+//    override func loginBtnCliked(btn: UIButton)
+//    {
+//        //
+//        super.loginBtnCliked(btn)
+//        
+//    }
+//    
+//    override func registerBtnCliked(btn: UIButton)
+//    {
+//       super.loginBtnCliked(btn)
+//        
+//    }
     /*
     // MARK: - Navigation
 

@@ -25,4 +25,26 @@ class WBBaseTableViewController: UITableViewController {
 //        let otherView = WBVisitorView()
 //        view = otherView
     }
+    
+    @objc func loginBtnCliked(btn: UIButton)
+    {
+        // 
+        SSLog("登录")
+    
+    }
+    
+    @objc func registerBtnCliked(btn: UIButton)
+    {
+        SSLog("注册")
+        
+    }
+    
+    @objc func quitBtnCliked(btn: UIButton)
+    {
+//        SSLog("退出")
+        self.navigationController?.dismissViewControllerAnimated(true, completion: { 
+            
+        })
+    }
+    
 }
