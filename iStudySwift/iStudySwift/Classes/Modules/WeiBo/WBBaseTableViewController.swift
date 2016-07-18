@@ -18,10 +18,11 @@ class WBBaseTableViewController: UITableViewController {
         isLogIn ? super.loadView() : setupVisitorView()
     }
     
-    // MARK: - 内部控制方法
-    private func setupVisitorView()
+    // MARK: - 内部控制方法,子类需要overide
+    func setupVisitorView()
     {
-        let otherView = WBVisitorView()
-        view = otherView
+        super.loadView()
+//        let otherView = WBVisitorView()
+//        view = otherView
     }
 }

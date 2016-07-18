@@ -21,6 +21,16 @@ class WBHomeViewController: WBBaseTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func setupVisitorView() {
+        let otherView = WBHomeVisitorView()
+        view = otherView
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 
     /*
     // MARK: - Navigation

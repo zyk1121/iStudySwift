@@ -1,28 +1,27 @@
 //
-//  WBVisitorView.swift
+//  WBMessageVisitView.swift
 //  iStudySwift
 //
-//  Created by zhangyuanke on 16/7/16.
+//  Created by zhangyuanke on 16/7/18.
 //  Copyright © 2016年 zhangyuanke. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class WBVisitorView: UIView {
-// MARK: - property
-    var rotationImageView: UIImageView?
+class WBMessageVisitView: UIView {
+    // MARK: - property
     var iconImageView: UIImageView?
     var titleLabel: UILabel?
     var rigisterButton: UIButton?
     var loginButton: UIButton?
     
     
-//MARK: - life circle
+    //MARK: - life circle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        self.backgroundColor = UIColor.grayColor()
+        //        self.backgroundColor = UIColor.grayColor()
         setupUI()
         
     }
@@ -35,8 +34,8 @@ class WBVisitorView: UIView {
         loginButton = UIButton()
         loginButton?.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         loginButton?.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Highlighted)
-        loginButton?.setTitle("测试", forState: UIControlState.Normal)
-        loginButton?.setTitle("测试", forState: UIControlState.Highlighted)
+        loginButton?.setTitle("登录", forState: UIControlState.Normal)
+        loginButton?.setTitle("登录", forState: UIControlState.Highlighted)
         loginButton?.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
         loginButton?.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
         self.addSubview(loginButton!)
@@ -54,4 +53,5 @@ class WBVisitorView: UIView {
             make.height.equalTo(36)
         })
     }
+
 }

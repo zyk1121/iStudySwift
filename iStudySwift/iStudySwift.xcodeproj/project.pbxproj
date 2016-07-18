@@ -23,6 +23,8 @@
 		76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */; };
 		76D5EEF11D39D778000DDED7 /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEF01D39D778000DDED7 /* WBMainViewController.swift */; };
 		76D5EEF41D39D7CE000DDED7 /* HTTPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEF31D39D7CE000DDED7 /* HTTPMainViewController.swift */; };
+		76ECD4251D3D21A600A8CFEE /* WBHomeVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECD4241D3D21A600A8CFEE /* WBHomeVisitorView.swift */; };
+		76ECD4281D3D22BF00A8CFEE /* WBMessageVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECD4271D3D22BF00A8CFEE /* WBMessageVisitView.swift */; };
 		89100205700ADE9E38355514 /* Pods_iStudySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7BAD93F958B2D79307DCB5 /* Pods_iStudySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		76D5EEF01D39D778000DDED7 /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		76D5EEF31D39D7CE000DDED7 /* HTTPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMainViewController.swift; sourceTree = "<group>"; };
+		76ECD4241D3D21A600A8CFEE /* WBHomeVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeVisitorView.swift; sourceTree = "<group>"; };
+		76ECD4271D3D22BF00A8CFEE /* WBMessageVisitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageVisitView.swift; sourceTree = "<group>"; };
 		9E7A23B474140AF1A0B10FAD /* Pods-iStudySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStudySwift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift.debug.xcconfig"; sourceTree = "<group>"; };
 		CC7BAD93F958B2D79307DCB5 /* Pods_iStudySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iStudySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,6 +103,7 @@
 		76A0BAC81D39F904005132A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				76ECD4231D3D218800A8CFEE /* View */,
 				76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */,
 			);
 			path = Home;
@@ -115,6 +120,7 @@
 		76A0BACA1D39F904005132A3 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				76ECD4261D3D22AB00A8CFEE /* View */,
 				76A0BAD21D39F960005132A3 /* WBMessageViewController.swift */,
 			);
 			path = Message;
@@ -223,6 +229,22 @@
 				76D5EEF31D39D7CE000DDED7 /* HTTPMainViewController.swift */,
 			);
 			path = HTTP;
+			sourceTree = "<group>";
+		};
+		76ECD4231D3D218800A8CFEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76ECD4241D3D21A600A8CFEE /* WBHomeVisitorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76ECD4261D3D22AB00A8CFEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76ECD4271D3D22BF00A8CFEE /* WBMessageVisitView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BF35AFACF31650A58739E988 /* Frameworks */ = {
@@ -365,7 +387,9 @@
 				76A0BADF1D3A86DB005132A3 /* WBBaseTableViewController.swift in Sources */,
 				76D5EEF41D39D7CE000DDED7 /* HTTPMainViewController.swift in Sources */,
 				76A0BAD11D39F94D005132A3 /* WBMeViewController.swift in Sources */,
+				76ECD4281D3D22BF00A8CFEE /* WBMessageVisitView.swift in Sources */,
 				76A0BACF1D39F93D005132A3 /* WBHomeViewController.swift in Sources */,
+				76ECD4251D3D21A600A8CFEE /* WBHomeVisitorView.swift in Sources */,
 				76A0B93A1D39E5F4005132A3 /* SSLog.swift in Sources */,
 				76A0BAD31D39F960005132A3 /* WBMessageViewController.swift in Sources */,
 			);

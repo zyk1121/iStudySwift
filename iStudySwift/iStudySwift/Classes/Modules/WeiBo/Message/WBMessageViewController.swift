@@ -22,7 +22,11 @@ class WBMessageViewController: WBBaseTableViewController
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func setupVisitorView() {
+        let otherView = WBMessageVisitView()
+        view = otherView
+    }
+    
     /*
     // MARK: - Navigation
 
