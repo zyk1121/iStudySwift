@@ -21,6 +21,13 @@ class WBMeViewController: WBBaseTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.settingBtnCliked(_:)))
+        
+    }
 
     /*
     // MARK: - Navigation

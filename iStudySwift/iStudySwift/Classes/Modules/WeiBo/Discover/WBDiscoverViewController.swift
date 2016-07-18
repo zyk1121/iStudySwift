@@ -21,6 +21,17 @@ class WBDiscoverViewController: WBBaseTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func setupVisitorView() {
+        let otherView = WBHomeVisitorView()
+        view = otherView
+        
+        // 登录注册
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.registerBtnCliked(_:)))
+                navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBBaseTableViewController.loginBtnCliked(_:)))
+        
+    }
+
+    
 
     /*
     // MARK: - Navigation

@@ -39,6 +39,12 @@ class WBBaseTableViewController: UITableViewController {
         
     }
     
+    @objc func settingBtnCliked(btn: UIButton)
+    {
+        SSLog("设置")
+        
+    }
+    
     @objc func quitBtnCliked(btn: UIButton)
     {
 //        SSLog("退出")
