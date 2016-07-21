@@ -12,7 +12,7 @@ import UIKit
 class WBBaseTableViewController: UITableViewController {
 
     // 定义标记用户登录的登录状态
-    var isLogIn = false
+    var isLogIn = true
     override func loadView() {
 //        super.loadView()
         isLogIn ? super.loadView() : setupVisitorView()
