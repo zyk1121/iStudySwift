@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		766692291D41187900FFFEFD /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766692281D41187900FFFEFD /* WBTitleButton.swift */; };
+		7667A0151D437F9600BAA925 /* WBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667A0141D437F9600BAA925 /* WBPopoverViewController.swift */; };
+		7667A0171D43865900BAA925 /* WBPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667A0161D43865900BAA925 /* WBPresentationController.swift */; };
 		76A0B93A1D39E5F4005132A3 /* SSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0B9391D39E5F4005132A3 /* SSLog.swift */; };
 		76A0BACD1D39F92A005132A3 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BACC1D39F92A005132A3 /* WBDiscoverViewController.swift */; };
 		76A0BACF1D39F93D005132A3 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		68EDA3D5A173D0971DB4248B /* Pods-iStudySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStudySwift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift.release.xcconfig"; sourceTree = "<group>"; };
 		766692281D41187900FFFEFD /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		7667A0141D437F9600BAA925 /* WBPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBPopoverViewController.swift; path = Popover/WBPopoverViewController.swift; sourceTree = "<group>"; };
+		7667A0161D43865900BAA925 /* WBPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBPresentationController.swift; path = Popover/WBPresentationController.swift; sourceTree = "<group>"; };
 		76A0B9391D39E5F4005132A3 /* SSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLog.swift; sourceTree = "<group>"; };
 		76A0BACC1D39F92A005132A3 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7667A0131D437F3E00BAA925 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				7667A0141D437F9600BAA925 /* WBPopoverViewController.swift */,
+				7667A0161D43865900BAA925 /* WBPresentationController.swift */,
+			);
+			name = Popover;
+			sourceTree = "<group>";
+		};
 		76A0B9371D39E5D1005132A3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +122,7 @@
 		76A0BAC81D39F904005132A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7667A0131D437F3E00BAA925 /* Popover */,
 				76ECD4231D3D218800A8CFEE /* View */,
 				76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */,
 			);
@@ -382,11 +396,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7667A0151D437F9600BAA925 /* WBPopoverViewController.swift in Sources */,
 				76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */,
 				766692291D41187900FFFEFD /* WBTitleButton.swift in Sources */,
 				76A0BADA1D3A449A005132A3 /* WBNullTableViewController.swift in Sources */,
 				76A0BAD51D39F996005132A3 /* WBPublishViewController.swift in Sources */,
 				76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */,
+				7667A0171D43865900BAA925 /* WBPresentationController.swift in Sources */,
 				76A0BACD1D39F92A005132A3 /* WBDiscoverViewController.swift in Sources */,
 				76A0BADD1D3A836D005132A3 /* UIButton+Extension.swift in Sources */,
 				76A0BAE11D3A8801005132A3 /* WBVisitorView.swift in Sources */,
