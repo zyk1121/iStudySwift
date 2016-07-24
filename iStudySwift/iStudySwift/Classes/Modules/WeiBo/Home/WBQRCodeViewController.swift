@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
 let kWidthForScanLine: CGFloat = 150
 
@@ -33,7 +34,39 @@ class WBQRCodeViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "相册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WBQRCodeViewController.photoBtnCliked(_:)))
         setupUI()
         
+        // 开始扫描二维码
+        
+        sacanQRCode()
     }
+    
+    private func sacanQRCode()
+    {
+        // 1.判断输入能否添加到会话中
+        if !session.canAddInput(input) {
+            return
+        }
+        // 2.判断输出能否添加到会话中
+        if !session.canAddOutput(output) {
+            return
+        }
+        // 3.添加输入和输出到会话中
+        session.addInput(input)
+        session.addOutput(output)
+        // 4.设置输出能够解析的数据类型
+        output.metadataObjectTypes = output.availableMetadataObjectTypes
+        // 5.设置监听解析数据
+        output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+        
+        // 添加预览图层
+        view.layer.insertSublayer(previewLayer, atIndex: 0)
+//        view.layer.addSublayer(previewLayer)
+        previewLayer.frame = view.bounds
+        // 6.开始扫描
+        session.startRunning()
+        
+        
+    }
+    
     
     
     func setupUI() {
@@ -49,7 +82,7 @@ class WBQRCodeViewController: UIViewController {
          // 默认选择
         tabBar.selectedItem = tabBar.items?.first
         // containerView
-        containerView.backgroundColor = UIColor.lightGrayColor()
+        containerView.backgroundColor = UIColor.clearColor()
         containerView.clipsToBounds = true
         view.addSubview(containerView)
         bgImageView.image = UIImage(named: "qrcode_border")
@@ -82,6 +115,20 @@ class WBQRCodeViewController: UIViewController {
         }
     }
     
+    // MARK:- 懒加载
+    // 输入对象
+    private lazy var input: AVCaptureDeviceInput = {
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        return try! AVCaptureDeviceInput(device:device)
+    }()
+    // 会话
+    private lazy var session: AVCaptureSession = AVCaptureSession()
+    // 输出对象
+    private lazy var output: AVCaptureMetadataOutput = AVCaptureMetadataOutput()
+    // 预览图层
+    private lazy var previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+    
+    
     //MARK: - autolayout
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -100,7 +147,7 @@ class WBQRCodeViewController: UIViewController {
             make.edges.equalTo(containerView)
         }
         
-        SSLog(containerView.frame)
+//        SSLog(containerView.frame)
     }
     
     // MARK:private method
@@ -137,4 +184,14 @@ extension WBQRCodeViewController : UITabBarDelegate
         // 重新添加动画
         animateForScanLine()
     }
+}
+
+extension WBQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate
+{
+    // 只要扫描到结果就会调用
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
+    {
+        SSLog(metadataObjects.last?.stringValue)
+    }
+
 }
