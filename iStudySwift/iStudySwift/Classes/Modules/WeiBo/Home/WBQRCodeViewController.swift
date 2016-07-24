@@ -61,6 +61,9 @@ class WBQRCodeViewController: UIViewController {
         view.layer.insertSublayer(previewLayer, atIndex: 0)
 //        view.layer.addSublayer(previewLayer)
         previewLayer.frame = view.bounds
+        
+        view.layer.addSublayer(customLayer)
+        customLayer.frame = view.bounds
         // 6.开始扫描
         session.startRunning()
         
@@ -93,6 +96,8 @@ class WBQRCodeViewController: UIViewController {
         scanLineImageView.image = UIImage(named: "qrcode_scanline_qrcode")
         scanLineImageView.frame = CGRectMake(0, 0, kWidthForScanLine, heightForScanLine)// 默认宽高
         containerView.addSubview(scanLineImageView)
+        
+        
         
         view.setNeedsUpdateConstraints()
     }
@@ -127,6 +132,9 @@ class WBQRCodeViewController: UIViewController {
     private lazy var output: AVCaptureMetadataOutput = AVCaptureMetadataOutput()
     // 预览图层
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+    
+    //  自定义图层
+    private lazy var customLayer: CALayer = CALayer()
     
     
     //MARK: - autolayout
@@ -191,7 +199,62 @@ extension WBQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate
     // 只要扫描到结果就会调用
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
     {
-        SSLog(metadataObjects.last?.stringValue)
+        clearCustomLayers()
+        // 结果
+        var stringVal = metadataObjects.last?.stringValue
+//        SSLog(metadataObjects.last?.stringValue)
+//        SSLog(metadataObjects.last)
+        // 坐标变换，通过预览图层
+        guard let objc = previewLayer.transformedMetadataObjectForMetadataObject(metadataObjects.last as? AVMetadataObject) else {
+            return
+        }
+//        let objcMachineCorners = (objc as! AVMetadataMachineReadableCodeObject).corners
+        
+        // 对扫描的二维码进行描边
+        drawLines(objc as! AVMetadataMachineReadableCodeObject)
+    }
+    
+    private func clearCustomLayers()
+    {
+        guard let layers = customLayer.sublayers else {
+            return
+        }
+        for layer in layers {
+            layer.removeFromSuperlayer()
+        }
+    }
+    
+    private func drawLines(objc: AVMetadataMachineReadableCodeObject)
+    {
+        guard let array = objc.corners else {
+            return
+        }
+        
+        // 1.创建图片，用于保存绘制的矩形
+        let layer = CAShapeLayer()
+        layer.lineWidth = 5
+        layer.strokeColor = UIColor.redColor().CGColor
+        layer.fillColor = UIColor.clearColor().CGColor
+        // 2.创建UIBezierPath,绘制矩形
+        let path = UIBezierPath()
+        // 
+        var point: CGPoint = CGPointZero
+        var index:Int = 0
+        
+        CGPointMakeWithDictionaryRepresentation((array[index] as! CFDictionary), &point)
+        path.moveToPoint(point)
+        index = 1
+        while index < array.count {
+            CGPointMakeWithDictionaryRepresentation((array[index] as! CFDictionary), &point)
+            path.addLineToPoint(point)
+            index = index + 1;
+        }
+        path.closePath()
+        
+        
+        layer.path = path.CGPath
+        // 3.将用于保存矩形的图层添加到界面上
+         customLayer.addSublayer(layer)
     }
 
 }
