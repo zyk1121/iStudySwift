@@ -28,6 +28,7 @@
 		76D5EEF11D39D778000DDED7 /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEF01D39D778000DDED7 /* WBMainViewController.swift */; };
 		76D5EEF41D39D7CE000DDED7 /* HTTPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEF31D39D7CE000DDED7 /* HTTPMainViewController.swift */; };
 		76D87DED1D4452F000D68584 /* WBHomeViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D87DEC1D4452F000D68584 /* WBHomeViewControllerManager.swift */; };
+		76D87DF01D4459AB00D68584 /* WBQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D87DEF1D4459AB00D68584 /* WBQRCodeViewController.swift */; };
 		76ECD4251D3D21A600A8CFEE /* WBHomeVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECD4241D3D21A600A8CFEE /* WBHomeVisitorView.swift */; };
 		76ECD4281D3D22BF00A8CFEE /* WBMessageVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ECD4271D3D22BF00A8CFEE /* WBMessageVisitView.swift */; };
 		89100205700ADE9E38355514 /* Pods_iStudySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7BAD93F958B2D79307DCB5 /* Pods_iStudySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -58,6 +59,7 @@
 		76D5EEF01D39D778000DDED7 /* WBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		76D5EEF31D39D7CE000DDED7 /* HTTPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMainViewController.swift; sourceTree = "<group>"; };
 		76D87DEC1D4452F000D68584 /* WBHomeViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewControllerManager.swift; sourceTree = "<group>"; };
+		76D87DEF1D4459AB00D68584 /* WBQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBQRCodeViewController.swift; sourceTree = "<group>"; };
 		76ECD4241D3D21A600A8CFEE /* WBHomeVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeVisitorView.swift; sourceTree = "<group>"; };
 		76ECD4271D3D22BF00A8CFEE /* WBMessageVisitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageVisitView.swift; sourceTree = "<group>"; };
 		9E7A23B474140AF1A0B10FAD /* Pods-iStudySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStudySwift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		76A0BAC81D39F904005132A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				76D87DEE1D44598500D68584 /* QRCode */,
 				7667A0131D437F3E00BAA925 /* Popover */,
 				76ECD4231D3D218800A8CFEE /* View */,
 				76A0BACE1D39F93D005132A3 /* WBHomeViewController.swift */,
@@ -252,6 +255,14 @@
 				76D5EEF31D39D7CE000DDED7 /* HTTPMainViewController.swift */,
 			);
 			path = HTTP;
+			sourceTree = "<group>";
+		};
+		76D87DEE1D44598500D68584 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				76D87DEF1D4459AB00D68584 /* WBQRCodeViewController.swift */,
+			);
+			name = QRCode;
 			sourceTree = "<group>";
 		};
 		76ECD4231D3D218800A8CFEE /* View */ = {
@@ -400,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7667A0151D437F9600BAA925 /* WBPopoverViewController.swift in Sources */,
+				76D87DF01D4459AB00D68584 /* WBQRCodeViewController.swift in Sources */,
 				76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */,
 				766692291D41187900FFFEFD /* WBTitleButton.swift in Sources */,
 				76D87DED1D4452F000D68584 /* WBHomeViewControllerManager.swift in Sources */,

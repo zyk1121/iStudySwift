@@ -118,6 +118,11 @@ class WBHomeViewController: WBBaseTableViewController {
     {
         // 扫码二维码
         
+        let qrcodeVC = WBQRCodeViewController()
+        // 隐藏底部tabbar
+        qrcodeVC.hidesBottomBarWhenPushed = true;
+        self.navigationController?.pushViewController(qrcodeVC, animated: true)
+        
     }
     
     @objc private func titleButtonClick(btn: WBTitleButton)
