@@ -12,7 +12,7 @@ import UIKit
 class WBBaseTableViewController: UITableViewController {
 
     // 定义标记用户登录的登录状态
-    var isLogIn = true
+    var isLogIn = WBUserAccount.isLogin()
     override func loadView() {
 //        super.loadView()
         isLogIn ? super.loadView() : setupVisitorView()
@@ -29,7 +29,9 @@ class WBBaseTableViewController: UITableViewController {
     @objc func loginBtnCliked(btn: UIButton)
     {
         // 
-        SSLog("登录")
+//        SSLog("登录")
+        let vc = WBAuthViewController()
+        self.presentViewController(vc, animated: true, completion: nil)
     
     }
     

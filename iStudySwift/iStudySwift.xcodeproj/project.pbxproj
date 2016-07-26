@@ -22,6 +22,9 @@
 		76A0BADF1D3A86DB005132A3 /* WBBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BADE1D3A86DB005132A3 /* WBBaseTableViewController.swift */; };
 		76A0BAE11D3A8801005132A3 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0BAE01D3A8801005132A3 /* WBVisitorView.swift */; };
 		76C929E61D3FC76600DE40F3 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C929E51D3FC76600DE40F3 /* UIBarButtonItem+Extension.swift */; };
+		76D0FEC81D47A7A600FB850F /* WBAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0FEC71D47A7A600FB850F /* WBAuthViewController.swift */; };
+		76D0FECA1D47B06C00FB850F /* SwiftThirdPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0FEC91D47B06C00FB850F /* SwiftThirdPartViewController.swift */; };
+		76D0FECC1D47BC4600FB850F /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0FECB1D47BC4600FB850F /* WBUserAccount.swift */; };
 		76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EED61D392AB4000DDED7 /* AppDelegate.swift */; };
 		76D5EEDE1D392AB4000DDED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */; };
 		76D5EEED1D392FD1000DDED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5EEEC1D392FD1000DDED7 /* MainViewController.swift */; };
@@ -52,6 +55,9 @@
 		76A0BADE1D3A86DB005132A3 /* WBBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBBaseTableViewController.swift; path = ../WBBaseTableViewController.swift; sourceTree = "<group>"; };
 		76A0BAE01D3A8801005132A3 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		76C929E51D3FC76600DE40F3 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		76D0FEC71D47A7A600FB850F /* WBAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthViewController.swift; sourceTree = "<group>"; };
+		76D0FEC91D47B06C00FB850F /* SwiftThirdPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftThirdPartViewController.swift; sourceTree = "<group>"; };
+		76D0FECB1D47BC4600FB850F /* WBUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		76D5EED31D392AB4000DDED7 /* iStudySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStudySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D5EED61D392AB4000DDED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76D5EEDD1D392AB4000DDED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		76A0BAC81D39F904005132A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				76D0FEC61D47A78C00FB850F /* Auth */,
 				76D87DEE1D44598500D68584 /* QRCode */,
 				7667A0131D437F3E00BAA925 /* Popover */,
 				76ECD4231D3D218800A8CFEE /* View */,
@@ -177,6 +184,16 @@
 				76A0BAE01D3A8801005132A3 /* WBVisitorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		76D0FEC61D47A78C00FB850F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				76D0FECB1D47BC4600FB850F /* WBUserAccount.swift */,
+				76D0FEC91D47B06C00FB850F /* SwiftThirdPartViewController.swift */,
+				76D0FEC71D47A7A600FB850F /* WBAuthViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		76D5EECA1D392AB4000DDED7 = {
@@ -420,6 +437,8 @@
 				76D87DED1D4452F000D68584 /* WBHomeViewControllerManager.swift in Sources */,
 				76A0BADA1D3A449A005132A3 /* WBNullTableViewController.swift in Sources */,
 				76A0BAD51D39F996005132A3 /* WBPublishViewController.swift in Sources */,
+				76D0FECC1D47BC4600FB850F /* WBUserAccount.swift in Sources */,
+				76D0FEC81D47A7A600FB850F /* WBAuthViewController.swift in Sources */,
 				76D5EED71D392AB4000DDED7 /* AppDelegate.swift in Sources */,
 				76D87DF21D44D21700D68584 /* WBQRCodeCreateViewController.swift in Sources */,
 				7667A0171D43865900BAA925 /* WBPresentationController.swift in Sources */,
@@ -429,6 +448,7 @@
 				76D5EEF11D39D778000DDED7 /* WBMainViewController.swift in Sources */,
 				76A0BADF1D3A86DB005132A3 /* WBBaseTableViewController.swift in Sources */,
 				76D5EEF41D39D7CE000DDED7 /* HTTPMainViewController.swift in Sources */,
+				76D0FECA1D47B06C00FB850F /* SwiftThirdPartViewController.swift in Sources */,
 				76A0BAD11D39F94D005132A3 /* WBMeViewController.swift in Sources */,
 				76ECD4281D3D22BF00A8CFEE /* WBMessageVisitView.swift in Sources */,
 				76A0BACF1D39F93D005132A3 /* WBHomeViewController.swift in Sources */,
