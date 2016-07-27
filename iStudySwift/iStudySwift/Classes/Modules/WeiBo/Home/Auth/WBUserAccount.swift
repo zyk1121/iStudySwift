@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class WBUserAccount: NSObject, NSCoding {
     
@@ -98,6 +99,8 @@ class WBUserAccount: NSObject, NSCoding {
         aCoder.encodeInteger(expires_in, forKey: "expires_in")
         aCoder.encodeObject(uid, forKey: "uid")
         aCoder.encodeObject(expires_Date, forKey: "expires_Date")
+        aCoder.encodeObject(avatar_large, forKey: "avatar_large")
+        aCoder.encodeObject(screen_name, forKey: "screen_name")
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -106,6 +109,53 @@ class WBUserAccount: NSObject, NSCoding {
         self.expires_in = aDecoder.decodeIntegerForKey("expires_in") as Int
         self.uid = aDecoder.decodeObjectForKey("uid") as? String
         self.expires_Date = aDecoder.decodeObjectForKey("expires_Date") as? NSDate
+        self.avatar_large = aDecoder.decodeObjectForKey("avatar_large") as? String
+        self.screen_name = aDecoder.decodeObjectForKey("screen_name") as? String
+    }
+    
+    var avatar_large: String?
+    var screen_name: String?
+    
+    func loadUserInfo(finished:(account: WBUserAccount?, error: NSError?)->())
+    {
+        // 准备请求路径
+        // 参数
+        //GET
+        /*
+         access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
+         uid	false	int64	需要查询的用户ID。
+         screen_name	false	string	需要查询的用户昵称。
+         */
+        assert(access_token != nil, "access_token不能为空")
+        
+        Alamofire.request(.GET, "https://api.weibo.com/2/users/show.json", parameters: ["access_token": access_token!,"uid" : uid!])
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    //                        NSJSONSerialization.JSONObjectWithData(response.data, options: NSJSONReadingOptions.MutableContainers)
+                    do {
+                        /*
+                         ["block_word": 0, "avatar_hd": http://tva4.sinaimg.cn/crop.13.24.254.254.1024/c41778b2gw1e9lrqx0ll1j207v0bt0tn.jpg, "friends_count": 11, "domain": , "verified_reason": , "description": ~我~们~都~只~是~星~尘~, "location": 其他, "urank": 2, "favourites_count": 0, "user_ability": 0, "ptype": 0, "follow_me": 0, "remark": , "bi_followers_count": 0, "lang": zh-cn, "name": puny_zhang, "statuses_count": 0, "id": 3289872562, "star": 0, "following": 0, "verified_reason_url": , "province": 100, "verified_source": , "geo_enabled": 1, "profile_image_url": http://tva4.sinaimg.cn/crop.13.24.254.254.50/c41778b2gw1e9lrqx0ll1j207v0bt0tn.jpg, "profile_url": u/3289872562, "allow_all_act_msg": 0, "url": , "screen_name": puny_zhang, "created_at": Tue Aug 20 08:06:25 +0800 2013, "city": 1000, "credit_score": 80, "allow_all_comment": 1, "mbtype": 0, "verified_type": -1, "class": 1, "idstr": 3289872562, "verified": 0, "followers_count": 2, "pagefriends_count": 0, "online_status": 0, "gender": m, "block_app": 0, "mbrank": 0, "avatar_large": http://tva4.sinaimg.cn/crop.13.24.254.254.180/c41778b2gw1e9lrqx0ll1j207v0bt0tn.jpg, "weihao": , "verified_source_url": , "verified_trade": ]
+                         
+                         */
+                        let jsonObject : AnyObject! = try NSJSONSerialization.JSONObjectWithData(response.data!, options: NSJSONReadingOptions.MutableContainers)
+                        SSLog(jsonObject as! [String : AnyObject])
+                        let dict = (jsonObject as! [String : AnyObject])
+                        self.avatar_large = dict["avatar_large"] as? String
+                        self.screen_name = dict["screen_name"] as? String
+                        finished(account: self, error: nil)
+                        // 保存用户信息
+                    } catch {
+                        
+                    }
+                case .Failure(let error):
+                    print(error)
+                     finished(account: nil, error: error)
+                }
+        }
+
+        
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WBHomeViewController: WBBaseTableViewController {
 
@@ -60,6 +61,8 @@ class WBHomeViewController: WBBaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WBHomeViewController.titleBtnChange), name: kWBPresentationDidPresentNotification, object: nil);
         // 注册通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WBHomeViewController.titleBtnChange), name: kWBPresentationDidDismissNotification, object: nil);
+        
+    
     }
     
     deinit
@@ -70,7 +73,7 @@ class WBHomeViewController: WBBaseTableViewController {
     
     private lazy var titleButton: WBTitleButton = {
     let titleButton = WBTitleButton()
-    titleButton.setTitle("首页", forState: UIControlState.Normal)
+    titleButton.setTitle(WBUserAccount.account?.screen_name, forState: UIControlState.Normal)
     titleButton.addTarget(self, action: #selector(WBHomeViewController.titleButtonClick), forControlEvents: UIControlEvents.TouchUpInside)
 //    self.navigationItem.titleView = titleButton
     return titleButton

@@ -9,4 +9,6 @@ target "iStudySwift" do
   pod 'Alamofire', '~> 3.2.1'
   pod 'SwiftHTTP', '~> 1.0.4'
   pod 'QorumLogs', '~> 0.4'
+  pod 'SVProgressHUD'
+  pod 'SDWebImage'
 end

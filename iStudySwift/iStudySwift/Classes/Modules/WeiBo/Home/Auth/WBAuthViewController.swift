@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Alamofire
 import SwiftHTTP
+import SVProgressHUD
 
 // 新浪微博auth授权
 /*
@@ -64,6 +65,14 @@ class WBAuthViewController: UIViewController {
 
 extension WBAuthViewController : UIWebViewDelegate
 {
+    func webViewDidStartLoad(webView: UIWebView) {
+        SVProgressHUD.showWithStatus("正在加载中...")
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
     // 如果返回false代表不允许请求，如果返回true代表允许请求
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool
     {
@@ -170,7 +179,13 @@ extension WBAuthViewController : UIWebViewDelegate
     private func saveAccountInfo(data : [String : AnyObject])
     {
         let account:WBUserAccount = WBUserAccount(dict:data)
-        
-        SSLog(account.saveAccount())
+//        SSLog(account.saveAccount())
+        // 获取用户信息
+        account.loadUserInfo { (account, error) in
+            account?.saveAccount()
+            self.dismissViewControllerAnimated(true, completion: { 
+                
+            })
+        }
     }
 }
